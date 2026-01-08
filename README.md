@@ -1,3 +1,5 @@
+# tekisasu-accesskit-c-static
+
 This repo contains prebuilt versions of [AccessKit C](https://github.com/AccessKit/accesskit-c) library and CI build configs.
 
 See [Releases page](https://github.com/godotengine/godot-accesskit-c-static/releases).
@@ -10,3 +12,19 @@ Patches:
 - `patch_gnullvm.diff` - Updates Corrosion to the commit with MinGW/LLVM toolchain support (`*-pc-windows-gnullvm`).
 
 There are no changes to the library code.
+
+## Package Requirements
+
+Note: Currently, only Fedora 43 build is supported by Tekisasu Engine.
+
+```sudo dnf install gcc gcc-c++ cmake git make meson pkg-config cargo rust rustup```
+
+## Compile instructions
+
+Compile for linuxbsd:
+
+```cmake -S . -B build -DCMAKE_BUILD_TYPE=Release```
+
+```cmake --build build```
+
+```cmake --install build```
